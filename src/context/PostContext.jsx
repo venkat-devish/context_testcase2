@@ -28,7 +28,6 @@ export const PostContextProvider = ({ children }) => {
   const currentPageStartIndex = curentPageLastIndex - maxPosts;
   const currentPosts = posts.slice(currentPageStartIndex, curentPageLastIndex);
   const totalPosts = posts.length;
-  console.log(currentPageStartIndex, curentPageLastIndex);
 
   const postsValue = {
     currentPosts,
