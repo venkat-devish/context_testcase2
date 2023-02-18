@@ -1,0 +1,19 @@
+.numOptions {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  background-color: rgb(169, 169, 202);
+  width: 600px;
+  padding: 0.5rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.numOptions__click {
+  border: 2px solid grey;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.numOptions__click:hover {
+  background-color: rgb(194, 194, 228);
+}

@@ -1,11 +1,12 @@
-import Pagination from "./components/Pagination";
-import Posts from "./components/Posts";
+import NumOptions from "./components/Pagination/NumOptions";
+import Pagination from "./components/Pagination/Pagination";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Posts />
       <Pagination />
+      <NumOptions />
     </div>
   );
 }
