@@ -1,5 +1,11 @@
 import axios from "axios";
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 const PaginationContext = createContext();
 
@@ -10,15 +16,22 @@ export const PaginationContextProvider = ({ children }) => {
 
   const indexHandler = (idx) => {
     setStartIndex(idx);
-    console.log(idx);
   };
 
   const tabHandler = (action) => {
-    action === "prev"
-      ? setStartIndex(startIndex - 1)
-      : setStartIndex(startIndex + 1);
+    if (startIndex % endIndex === 0) {
+      setStartIndex(1);
+      return;
+    } else if (startIndex <= 0) {
+      setStartIndex(10);
+      return;
+    } else {
+      action === "prev"
+        ? setStartIndex(startIndex - 1)
+        : setStartIndex(startIndex + 1);
+    }
   };
-
+  console.log(startIndex, endIndex);
   const lastPostIndex = endIndex * startIndex;
   const firstPostIndex = lastPostIndex - endIndex;
   const filteredposts = posts.slice(firstPostIndex, lastPostIndex);

@@ -17,3 +17,11 @@
 .numOptions__click:hover {
   background-color: rgb(194, 194, 228);
 }
+
+.numOptions__click:active {
+  background-color: rgb(67, 67, 84);
+}
+
+.numOptions__click:focus {
+  background-color: rgb(67, 67, 84);
+}
